@@ -8,7 +8,13 @@ answer = 'SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t'
 print(base64Encode(bytes.fromhex(hexStr)).decode('utf-8'))
 
 def hex2base64BaselineCalc():
-    return base64Encode(bytes.fromhex(hexStr))
+    tempBytes = bytes.fromhex(hexStr)
+    base64ResultStr = base64Encode(tempBytes).decode('utf-8')
+    if base64ResultStr != answer:
+        return print('String Compare Failed')
+    else:
+        return print('String Compare Successful')
+
 
 
 def hex2base64(inputStr):
