@@ -1,15 +1,14 @@
-from base64 import b64encode as base64Encode
-import base64
+from base64 import b64encode as ncode2base64
 
 
 hexStr = '49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d'
 answer = 'SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t'
 
-print(base64Encode(bytes.fromhex(hexStr)).decode('utf-8'))
+#print(base64Encode(bytes.fromhex(hexStr)).decode('utf-8'))
 
 def hex2base64BaselineCalc():
     tempBytes = bytes.fromhex(hexStr)
-    base64ResultStr = base64Encode(tempBytes).decode('utf-8')
+    base64ResultStr = ncode2base64(tempBytes).decode('utf-8')
     if base64ResultStr != answer:
         return print('String Compare Failed')
     else:
@@ -24,5 +23,5 @@ def hex2base64(inputStr):
         hex2base64BaselineCalc()
     else:
         tempBytes = bytes.fromhex(inputStr)
-        base64Str = base64Encode(tempBytes)
+        base64Str = ncode2base64(tempBytes)
         return base64Str
