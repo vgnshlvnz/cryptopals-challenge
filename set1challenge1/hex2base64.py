@@ -1,3 +1,5 @@
+''' Import base64 encoding function from base64 module 
+'''
 from base64 import b64encode as ncode2base64
 
 
