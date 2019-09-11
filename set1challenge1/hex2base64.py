@@ -27,3 +27,12 @@ def hex2base64(inputStr):
         tempBytes = bytes.fromhex(inputStr)
         base64Str = ncode2base64(tempBytes)
         return base64Str
+
+
+def main():
+    output = hex2base64()
+    print(output)
+
+
+if __name__ == '__main__':
+    main()
