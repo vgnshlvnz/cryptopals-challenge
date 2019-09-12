@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ''' Import base64 encoding function from base64 module 
 '''
 from base64 import b64encode as ncode2base64
@@ -30,11 +31,11 @@ def hex2base64(inputStr):
 
 
 def main():
-    if argument >= 2:
-        print("argument more than 2, unable to process further.")
+    if len(argument) >= 3:
+        print("argument more than 3, unable to process further.")
     else:
         output = hex2base64(str(argument[1]))
-    print(output)
+        print(output)
 
 
 if __name__ == '__main__':
